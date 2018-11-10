@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <IOBluetooth/IOBluetooth.h>
 //#import "VehiclesController.h"
+#import <CoreBluetooth/CoreBluetooth.h>
 
 #import "anki_sdk/anki_util.h"
 #import "anki_sdk/common.h"

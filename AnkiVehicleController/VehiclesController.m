@@ -19,7 +19,8 @@
 
 -(void) beginScan {
     manager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
-    [manager scanForPeripheralsWithServices:[NSArray arrayWithObject:[CBUUID UUIDWithString:@ANKI_STR_SERVICE_UUID]] options:nil];
+
+//    [manager scanForPeripheralsWithServices:[NSArray arrayWithObject:[CBUUID UUIDWithString:@ANKI_STR_SERVICE_UUID]] options:nil];
 }
 
 -(void) stopScan {
@@ -46,6 +47,8 @@
 
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
+    NSLog(@"state=%ld", (long)central.state);
+    [manager scanForPeripheralsWithServices:[NSArray arrayWithObject:[CBUUID UUIDWithString:@ANKI_STR_SERVICE_UUID]] options:nil];
 
 }
 
