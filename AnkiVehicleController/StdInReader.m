@@ -52,6 +52,12 @@
             int val = (int)[dict[@"value"] integerValue];
             [v setSpeed:val];
         }
+        else if ([command isEqualToString:@"set-offset"]) {
+            Vehicle *v = [self getVehicle:dict[@"carId"]];
+            float val = (int)[dict[@"value"] floatValue];
+            NSLog(@"OFFSET: **%f**\n", val);
+            [v setLaneOffset:val];
+        }
         else if ([command isEqualToString:@"list-cars"]) {
             NSMutableArray *cars = [NSMutableArray new];
             for (Vehicle *v in _controller.vehicles) {

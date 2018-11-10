@@ -30,6 +30,13 @@
     [self sendMessage:&msg withLength:size];
 }
 
+-(void) setLaneOffset:(float) offset{
+    anki_vehicle_msg_t msg;
+    memset(&msg, 0, sizeof(msg));
+    uint8_t size = anki_vehicle_msg_set_offset_from_road_center(&msg, offset);
+    [self sendMessage:&msg withLength:size];
+}
+
 -(void) spin180 {
     anki_vehicle_msg_t msg;
     memset(&msg, 0, sizeof(msg));

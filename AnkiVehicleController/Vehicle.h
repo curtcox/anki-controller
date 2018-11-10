@@ -32,4 +32,5 @@
 -(bool) isActive;
 -(void) setSpeed:(float) speed;
 -(void) spin180;
+-(void) setLaneOffset:(float) offset;
 @end
